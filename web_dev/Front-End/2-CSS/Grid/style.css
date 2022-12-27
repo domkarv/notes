@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+
+  /* gap: 10px; */
+  row-gap: 10px;
+  column-gap: 10px;
+
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-rows: repeat(3, 1fr);
+  /* to use above two properties first specify height or width */
+
+  /* read more about the code written here */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+
+  /* grid-template-areas:
+    "sbr hdr hdr crnr"
+    "sbr main main sbrl"
+    "sbr main main sbrl"; */
+}
+
+#box-1 {
+  /* grid-row-start: 1;
+  grid-row-end: 4; */
+  grid-row: span 3;
+  /* this is the shorthand property for above two statements */
+
+  /* grid-area: sbr; */
+  background-color: green;
+}
+
+#box-2 {
+  /* grid-column-start: 2;
+  grid-column-end: 4; */
+  grid-column: span 2;
+  /* this is the shorthand property for above two statements */
+
+  /* grid-area: hdr; */
+  background-color: green;
+}
+
+#box-3 {
+  /* grid-area: crnr; */
+  background-color: red;
+}
+
+#box-7,
+#box-5 {
+
+  background-color: green;
+  /* grid-area: sbrl; */
+}
+
+#box-6 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 4;
+
+  background-color: red;
+}
+
+#box-4,
+#box-8 {
+  background-color: yellow;
+}
+
+/*
+we can also use properties like, 
+'justify-content',
+'align-items',
+'align-content',
+'justify-self',
+'align-self',
+
+this properties are just like 'flex' properties
+*/

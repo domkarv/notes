@@ -1,0 +1,84 @@
+** Note => All commands mention here, run in Git Bash **
+
+First check node and npm are installed or not on you device.
+Follw this commands =>
+- node -v
+- npm -v
+
+**
+- 'node', 'npm' and 'nodemon' => are installed on your device
+- 'express', 'body-parser' => you have to install them in every project
+**
+
+**
+If port is '80' instead of '3000' then then server loads at 'http://127.0.0.1'
+instead of 'http://127.0.0.1:80'
+**
+
+Node => (PORT = process.env.PORT || 3000;)
+(To quit server any time 'ctrl + c')
+- Install node.js from https://nodejs.org/en/
+- You can use JavaScript directly in command line just type 'node' and hit enter.
+  Just like how we use in Chrome console.
+  This is also known as REPL.
+  To exit from REPL just type '.exit' and press enter or use 'ctrl + c'
+- To run JavaScript file in terminal => type 'node fileName.js'
+
+npm =>
+- To initializing npm in your project type 'npm init' and press enter.
+- Now it will ask some questions, if you are satisfied with npm suggetion then
+  enter otherwise type whatever you want
+- Once npm is initialized in your project,
+  you can use npm pre-build packages by installing them in your project.
+- Search for npm package you want to install on npm's official website,
+  and there you will get steps to install particular npm package,
+  and the methods to access this packages are also given there (for more see 'newFolder/index.js')
+  ( in 'newFolder' you have used 'superheroes' and 'supervillains' npm packages )
+- Once this packages are installed you can see them listed in 'package.json' in 'dependencies'.
+- By mistaken, if your package manager file 'node modules' got deleted
+  then run a command 'npm install' at your project location.
+- If you want to download specific version of any package, then you can use following command
+  'npm install packageName@1.3.5' =>(1.3.5 is version you want to install.)
+- If some you want to install some packages only for development not for production
+  then use 'npm install package --save-dev' => (you can see this listed in 'package.json' in 'devDependencies'.)
+- To see the versions of packages installed => 'npm view packageName version'
+
+**
+In 'package.json' in 'dependencies' you will see '^' in front of versions of packages,
+this '^' sign means that when our project goes on production this will install mentioned version of package only.
+But if youwant to install latest version of package you can use '~' OR '>' sign
+**
+
+express =>
+- For this first verify that you have initialized npm in you project
+- 'npm install express' to install express in your project
+  (You can see 'package.json' => 'dependencies' section to know which packages you have installed in you project)
+- To initialise express in your project -
+  'const express = require('express');'
+  'const app = express();'
+  - for more see 
+  firstly - 'express-server/server.js'
+  secondly - 'calculator/index.js'
+- 'node fileName.js' to start server
+  but the problem with this method if you made some changes in your file then you have to quit server
+  and start the server again after saving changes
+- this is where 'nodemon' help us to automate the things
+
+nodemon =>
+- 'nodemon', a npm package that will make it way easier for us to auto start our servers, it's like Go live
+- 'npm install -g nodemon' => to install 'nodemon'
+- 'nodemon fileName.js' to start server
+  Once you start the server no need to do quit, save and start again, all changes are saved automatically
+
+body-parser =>
+- Body-parser is the Node.js body parsing middleware.
+- It is responsible for parsing the incoming request bodies in a middleware before you handle it.
+- 'npm install body-parser' => to install 'body-parser'
+- for more see 'calculator/index.js'
+
+EJS =>
+- See 1st =>'to-do', 2nd =>'ejs-challenge' directories ['for more visit official website of EJS']
+- All 'EJS' files should be in 'views' directory
+- This 'views' file should be at adjecent of 'app.js'
+- 'const ejs = require("ejs");', 'app.set("view engine", "ejs");' => To use 'EJS' this lines are mendatory
+- Instead of 'res.send("...");' here we use 'res.render("EJS-file-name", "objects");'

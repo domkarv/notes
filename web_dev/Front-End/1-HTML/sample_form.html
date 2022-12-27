@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Personal Details</title>
+   <style>
+      .form-container {
+         width: 60vw;
+         margin: auto;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="form-container">
+      <form action="mailto:onkardate2457@gmail.com" method="post" enctype="text/plain">
+         <fieldset>
+            <legend>Personal Details</legend>
+
+            <div>
+               <label for="salutation">Salutation</label>
+               <br>
+               <select id="salutation" name="Salut." required>
+                  <option value="">None</option>
+                  <option value="mr">Mr.</option>
+                  <option value="mrs">Mrs.</option>
+                  <option value="ms">Ms.</option>
+                  <option value="dr">Dr.</option>
+                  <option value="Prof">Prof.</option>
+               </select>
+            </div>
+
+            <br>
+
+            <div>
+               <label for="fname">First name : </label>
+               <input type="text" name="firstName" id="fname" required>
+            </div>
+
+            <br>
+
+            <div>
+               <label for="lname">Last name : </label>
+               <input type="text" name="lastName" id="lname" required>
+            </div>
+
+            <br>
+
+            <div>
+               <label>Gender :</label>
+               <input type="radio" id="male" name="gender" value="male" class="cursor" required
+                  style="cursor: pointer;">
+               <label for="male">Male</label>
+               <input type="radio" id="female" name="gender" value="female" class="cursor" required
+                  style="cursor: pointer;">
+               <label for="female">Female</label>
+            </div>
+
+            <br>
+
+            <div>
+               <label for="email">E-mail : </label>
+               <input type="email" name="email" id="email" required>
+            </div>
+
+            <br>
+
+            <div>
+               <label for="date">Date of Birth :</label>
+               <input type="date" name="dob" id="date" required>
+            </div>
+
+            <br>
+
+            <div>
+               <label for="address">Address :</label>
+               <br>
+               <textarea id="address" name="address" cols="30" rows="4" required></textarea>
+            </div>
+
+            <br>
+
+            <div>
+               <!-- <button value="button" style="cursor: pointer;">Submit</button> -->
+               <input type="submit" value="send">
+            </div>
+
+         </fieldset>
+      </form>
+   </div>
+
+</body>
+
+</html>

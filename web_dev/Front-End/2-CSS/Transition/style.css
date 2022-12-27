@@ -1,0 +1,33 @@
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: #0077b6;
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* transition-property: background-color; */
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  transition-delay: 1s;
+}
+
+.box:hover {
+
+  /* for square to triangle */
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 300px solid #03045e;
+  background-color: white;
+
+  /* for square to circle */
+  /* background-color: #03045e;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%; */
+}

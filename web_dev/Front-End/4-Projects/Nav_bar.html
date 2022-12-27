@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Website</title>
+
+   <style>
+      /* Navigation bar using list */
+
+      ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: lightblue;
+         /* width: 100%; */
+      }
+
+      li {
+         float: left;
+         padding: 15px;
+         text-align: center;
+         cursor: pointer;
+      }
+
+      a {
+         color: black;
+         text-decoration: none;
+      }
+
+      li:hover {
+         background-color: rgb(137, 193, 212);
+      }
+
+      /* remove comment to see difference */
+      /* ul li {
+         width: 19.96%;
+      } */
+
+
+      /* Navigation bar using table */
+
+      table {
+         background-color: lightblue;
+         width: 100%;
+         border-collapse: collapse;
+      }
+
+      td {
+         padding: 15px;
+         text-align: center;
+         cursor: pointer;
+      }
+
+      td:hover {
+         background-color: rgb(137, 193, 212);
+      }
+   </style>
+
+</head>
+
+<body>
+
+   <h2>Navigation bar using unordered list</h2>
+   <ul>
+      <li onclick="document.location='/html_notes.html'">Home</li>
+      <li onclick="document.location='/html_notes.html'">News</li>
+      <li onclick="document.location='/html_notes.html'">Contact</li>
+      <li onclick="document.location='/html_notes.html'">About</li>
+   </ul>
+
+   <hr>
+
+   <h2>Navigation bar using table</h2>
+   <table>
+      <tr>
+         <td onclick="document.location='/html_notes.html'">Home</td>
+         <td onclick="document.location='/html_notes.html'">News</td>
+         <td onclick="document.location='/html_notes.html'">Contact</td>
+         <td onclick="document.location='/html_notes.html'">About</td>
+      </tr>
+   </table>
+
+</body>
+
+</html>

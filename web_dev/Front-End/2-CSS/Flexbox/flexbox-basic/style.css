@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: green;
+  height: 100vh;
+
+  display: flex;
+
+  /* vertically align content */
+  align-items: center;
+
+  /*
+  The 'align-content' property is used to align the flex lines.
+  */
+  /* align-content: flex-end; */
+
+  /*
+  horizontally align content
+  */
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  /* justify-content: flex-end; */
+
+  /* flex-direction: column; */
+
+  /* flex-wrap: wrap; */
+
+  /* gap: 15px; */
+
+  /* space between two rows */
+  /* row-gap: 15px; */
+
+  /* space between two columns */
+  column-gap: 15px;
+}
+
+.box {
+  background-color: yellow;
+  width: 200px;
+  /* height: 200px; */
+  /* margin: 5px; */
+
+  /* to centre text */
+  /* height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  /* to centre text */
+  text-align: center;
+  line-height: 100px;
+  /*
+  instead of giving height to div that contains some text you can give
+  "line-height: ;" property this will add some space at top and bottom of text
+  */
+
+  /* for text */
+  font-weight: bold;
+  font-size: large;
+}
+
+#box-4 {
+  /* self alignment of container */
+  align-self: flex-end;
+
+  /* flex: 1; */
+}
+
+#box-5 {
+  line-height: 150px;
+  /* flex: 1; */
+  /* flex-grow: 1; */
+  /*
+  The 'flex-grow' property specifies how much a flex item
+  will grow relative to the rest of the flex items.
+  */
+
+  /* flex-shrink: 2; */
+  /*
+  The flex-shrink property specifies how much
+  flex item will shrink relative to the rest of the flex items
+  */
+}

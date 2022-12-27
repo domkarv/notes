@@ -1,0 +1,28 @@
+<!-- this will include 'header.ejs' at header -->
+<%- include('header') -%>
+
+  <div class="main-container">
+    <h1>
+      <%= today %>
+    </h1>
+
+    <div class="task-container">
+      <ul>
+        <% for(let i=0; i<items.length; i++){ %>
+          <li>
+            <input type="checkbox">
+            <p>
+              <%= items[i] %>
+            </p>
+          </li>
+          <% } %>
+      </ul>
+      <form action="/" method="post">
+        <input type="text" name="newItem" placeholder="New task" autofocus autocomplete="off">
+        <button type="submit" name="add-button" value="<%= today %>"> + </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- this will include 'header.ejs' at footer -->
+  <%- include('footer') -%>
