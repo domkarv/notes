@@ -1,0 +1,85 @@
+*** Mongoose *** =>
+- Refer 'mongoose-firstProject'
+
+*** MongoDB Shell *** =>
+- show dbs -> give all saved Databases
+- db -> shows current DB
+- use databaseName -> to create or switch DB
+- db.dropDatabase() -> Delete Database 
+- show collections -> give all saved collections of DB
+  (collections are like tables of SQL)
+- db.createCollection('customers') -> Create a collection named customers
+- db.collection.drop() -> Drop a collection
+- db.collection.find() -> Show all Rows in a Collection
+- db.collection.find({_id: 1}) -> Show all Rows in a Collection having '_id: 1'
+- db.collection.find().limit(2) -> Limit the number of rows in output
+- db.collection.find().count() -> Count the number of rows in the output
+- db.collection.find({ age: { $gte: 18 } }) -> Show all Rows in a Collection having 'age >= 18'
+- db.collection.find({ age: { $gt: 18 } })
+- db.collection.find({ age: { $lt: 18 } })
+- db.collection.find({ age: { $lte: 18 } })
+
+- db.collection.insertOne({
+  _id: 1, 
+  name: 'Omkar Date',
+  mob: '7400288080'
+  age: 19
+  })
+-> Insert One Row
+
+- db.collection.insertMany([
+    {
+      _id: 1,
+      name: 'Omkar Date',
+      mob: '7400288080'
+      age: 19
+    },
+    {
+      _id: 2,
+      name: 'Om Date',
+      mob: '9288444321'
+      age: 17
+    },
+    {
+      _id: 3,
+      name: 'Aarav Gadge',
+      mob: '9987621863'
+      age: 6
+    }
+  ])
+-> Insert many Rows
+
+- db.collection.updateOne(
+  { _id: 1 },
+  {
+    $set: { mob: '8689809206' },
+  },
+  )
+-> update the row that has '_id: 1' as set " mob: '8689809206' "
+  (This will update only one)
+
+- db.collection.updateMany(
+  { _id: 1 },
+  {
+    $inc: { age: 2 },
+  }
+  )
+-> update the all Rows that has '_id: 1' as increament its age by 2
+
+- db.collection.updateMany(
+  { _id: 1 },
+  {
+    $rename: { mob: "mobileNo" },
+  }
+  )
+-> update the all Rows that has '_id: 1' as raname its 'mob' by 'mobileNo'
+
+- db.collection.remove({ name: 'Omkar Date' }) -> remove row that has " name: 'Omkar Date' "
+
+- db.collection.updateMany(
+  { age: { $gt: 18 } },
+  {
+    $set: { eligibility: 'yes' },
+  }
+  )
+-> update the all Rows that has 'age > 18' as set there " eligibility: 'yes' "
