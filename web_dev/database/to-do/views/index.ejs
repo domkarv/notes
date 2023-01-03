@@ -3,23 +3,26 @@
 
   <div class="main-container">
     <h1>
-      <%= today %>
+      <%= title %>
     </h1>
 
     <div class="task-container">
       <ul>
         <% items.forEach((item)=>{ %>
           <li>
-            <input type="checkbox">
-            <p>
-              <%= item %>
-            </p>
+            <form action="/delete" method="post">
+              <input type="checkbox" name="checkBox" value="<%= item._id %>" onchange="this.form.submit()">
+              <p>
+                <%= item.task %>
+              </p>
+              <input type="hidden" name="hiddenInput" value="<%= title %>">
+            </form>
           </li>
           <% }) %>
       </ul>
       <form action="/" method="post">
         <input type="text" name="newItem" placeholder="New task" autofocus autocomplete="off">
-        <button type="submit" name="addButton" value="<%= today %>"> + </button>
+        <button type="submit" name="addButton" value="<%= title %>"> + </button>
       </form>
     </div>
   </div>

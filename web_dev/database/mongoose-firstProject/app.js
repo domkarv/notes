@@ -155,6 +155,8 @@ bcoz as many time you run this code that many time same data will saved again an
 //   if (err) console.log(`Deletion error is: ${err}`);
 //   else console.log("Deletion successful");
 // });
+// Person.findByIdAndRemove();
+// Person.findByIdAndDelete(); // and there are many more like this
 
 /* *** Reading Data *** => */
 // 'find()' will give all of your data saved in collection 'people'

@@ -82,3 +82,6 @@ EJS =>
 - This 'views' file should be at adjecent of 'app.js'
 - 'const ejs = require("ejs");', 'app.set("view engine", "ejs");' => To use 'EJS' this lines are mendatory
 - Instead of 'res.send("...");' here we use 'res.render("EJS-file-name", "objects");'
+
+lodash =>
+- refer blog-project and official documentation
