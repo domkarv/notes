@@ -10,12 +10,16 @@ Follw this commands =>
 - 'express', 'body-parser' => you have to install them in every project
 **
 
-**
-If port is '80' instead of '3000' then then server loads at 'http://127.0.0.1'
-instead of 'http://127.0.0.1:80'
-**
+(PORT = process.env.PORT || 3000;) => read about this
+***
+- When the port is '3000'
+  u can use => 'http://127.0.0.1:3000' OR 'http://localhost:3000'
 
-Node => (PORT = process.env.PORT || 3000;)
+- When the port is '80'
+  u can use => 'http://127.0.0.1' OR 'http://localhost' OR 'http://127.0.0.1:80' OR 'http://localhost:80'
+***
+
+Node =>
 (To quit server any time 'ctrl + c')
 - Install node.js from https://nodejs.org/en/
 - You can use JavaScript directly in command line just type 'node' and hit enter.

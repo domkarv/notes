@@ -1,36 +1,32 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const date = require("./date");
 const lodash = require("lodash");
 const mongoose = require("mongoose");
-const { name } = require("ejs");
 
 mongoose.set("strictQuery", false);
 const mongoDB = "mongodb://127.0.0.1:27017/todolistDB";
 mongoose.connect(mongoDB, (err) => {
-  if (err) console.log(`Unable to connect to the server: ${err}`);
-  else console.log("MongoDB is connected");
+  if (err) console.log(`Unable to connect to MongoDB: ${err}`);
+  else console.log("MongoDB is now connected!");
 });
 
 const listSchema = new mongoose.Schema({
-  task: String,
-  // task: {
-  //   type: String,
-  //   required: [true, "Please check your data, task is not specified!"],
-  // },
+  // task: String,
+  task: {
+    type: String,
+    required: [true, "Please check your data, task is not specified!"],
+  },
 });
-
 const Task = mongoose.model("taskcollection", listSchema);
 
 const customListSchema = new mongoose.Schema({
-  name: String,
-  // name: {
-  //   type: String,
-  //   required: [true, "Please check your data, task is not specified!"],
-  // },
+  // name: String,
+  name: {
+    type: String,
+    required: [true, "Please check your data, task is not specified!"],
+  },
   items: [listSchema],
 });
-
 const CustomeTask = mongoose.model("CustomeTaskCollection", customListSchema);
 
 const item1 = new Task({
@@ -45,6 +41,7 @@ const item3 = new Task({
 
 const defaultItems = [item1, item2, item3];
 
+// Initializing Express
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -60,7 +57,7 @@ app.get("/", (req, res) => {
       // console.log(allItems);
 
       // we are doing this bcoz we want to insert default items only one time
-      // 'allItems.length === 0' this means no item in the database
+      // 'allItems.length === 0' this means no item in the list
       if (allItems.length === 0) {
         Task.insertMany(defaultItems, (err) => {
           if (err) console.log(`Insertion error is: ${err}`);
@@ -72,12 +69,13 @@ app.get("/", (req, res) => {
         // now this time 'else' part will run bcoz now 'allItems.length > 0'
       } else res.render("index", { title: "Today", items: allItems });
       // here we have passed whole object called 'allItems' and
-      // we want access only one property of it called 'task'
+      // we want to access only one property of it called 'task'
       // for this see 'index.ejs'
     }
   });
 });
 
+/* all requests and input processing */
 app.post("/", (req, res) => {
   const item = req.body.newItem.trim();
   /* trim() removes starting whitespace */
@@ -92,7 +90,7 @@ app.post("/", (req, res) => {
     });
 
     if (requestedTitle === "Today") {
-      newItem.save();
+      newItem.save(); // this will save item to 'taskcollection'
       res.redirect("/");
     } else {
       CustomeTask.findOne({ name: requestedTitle }, (err, foundList) => {
@@ -100,7 +98,7 @@ app.post("/", (req, res) => {
         else {
           foundList.items.push(newItem);
           /* 'foundList.items' is array of objects */
-          foundList.save();
+          foundList.save(); // this will save item to 'custometaskcollection'
           res.redirect(`/${requestedTitle}`);
         }
       });
@@ -108,10 +106,11 @@ app.post("/", (req, res) => {
   }
 });
 
-app.get("/:customListName", (req, res) => {
-  const customListName = lodash.startCase(req.params.customListName);
+/* responce to custome lists */
+app.get("/:customeListName", (req, res) => {
+  const customeListName = lodash.startCase(req.params.customeListName);
 
-  CustomeTask.findOne({ name: customListName }, (err, foundList) => {
+  CustomeTask.findOne({ name: customeListName }, (err, foundList) => {
     if (err) console.log(`Reading error is: ${err}`);
     else {
       if (foundList) {
@@ -120,21 +119,22 @@ app.get("/:customListName", (req, res) => {
           title: foundList.name,
           items: foundList.items,
         });
-        console.log(`${foundList.name} already exists!`);
+        console.log(`${foundList.name} list already exist!`);
       } else {
-        // if list not found creating new list and saving
+        // if list not found then this will create new list and save it
         const newItem = new CustomeTask({
-          name: customListName,
+          name: customeListName,
           items: defaultItems,
         });
         newItem.save();
-        console.log(`${customListName} is created!`);
-        res.redirect("/" + customListName);
+        console.log(`${customeListName} list is created!`);
+        res.redirect(`/${customeListName}`);
       }
     }
   });
 });
 
+/* All deletion processes are done here */
 app.post("/delete", (req, res) => {
   const itemId = req.body.checkBox; // this gives you id of task
   const listTitle = req.body.hiddenInput;
@@ -170,8 +170,6 @@ app.get("/contact", (req, res) => {
   // 'contact' is 'contact.ejs' file
 });
 
-app.listen(80, "127.0.0.1", () => {
-  console.log(
-    "Server 3000 has started at 'http://127.0.0.1' OR 'http://localhost'"
-  );
+app.listen(80, () => {
+  console.log("Server has started at 'http://127.0.0.1' OR 'http://localhost'");
 });
