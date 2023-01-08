@@ -160,16 +160,6 @@ app.post("/delete", (req, res) => {
   }
 });
 
-app.get("/about", (req, res) => {
-  res.render("about");
-  // 'about' is 'about.ejs' file
-});
-
-app.get("/contact", (req, res) => {
-  res.render("contact");
-  // 'contact' is 'contact.ejs' file
-});
-
 app.listen(80, () => {
   console.log("Server has started at 'http://127.0.0.1' OR 'http://localhost'");
 });

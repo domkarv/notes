@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
 const lodash = require("lodash");
 
 const app = express();
@@ -18,22 +17,22 @@ const contactContent =
 const blogs = [];
 
 app.get("/", (req, res) => {
-  res.render("home", {
+  res.render("pages/home", {
     homeStartingContent: homeStartingContent,
     blogs: blogs,
   });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", { aboutContent: aboutContent });
+  res.render("pages/about", { aboutContent: aboutContent });
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact", { contactContent: contactContent });
+  res.render("pages/contact", { contactContent: contactContent });
 });
 
 app.get("/compose", (req, res) => {
-  res.render("compose");
+  res.render("pages/compose");
 });
 
 app.post("/compose", (req, res) => {
@@ -53,7 +52,7 @@ app.get("/blogs/:blogTitle", (req, res) => {
     if (
       lodash.lowerCase(blog.title) === lodash.lowerCase(req.params.blogTitle)
     ) {
-      res.render("blog", {
+      res.render("pages/blog", {
         title: blog.title,
         post: blog.post,
       });

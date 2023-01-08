@@ -9,8 +9,8 @@ Use => "mongodb://127.0.0.1:27017/DataBaseName"
 */
 /* mongoose.connect(DataBase_URL); */
 mongoose.connect(mongoDB, (err) => {
-  if (err) console.log(`Unable to connect to the server: ${err}`);
-  else console.log("MongoDB is connected");
+  if (err) console.log(`Unable to connect to MongoDB: ${err}`);
+  else console.log("MongoDB is now connected");
 });
 /*
 To connect with mongoDB run command 'mongod' in terminal

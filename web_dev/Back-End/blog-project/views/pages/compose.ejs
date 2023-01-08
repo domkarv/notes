@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head' ); -%>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/header' ); -%>
+  </header>
+
+  <div class="container">
+    <h1>Compose</h1>
+
+    <form action="/compose" method="post">
+      <div class="form-group">
+
+        <label for="composeTitle">Title</label>
+        <input type="text" class="form-control" name="composeTitle">
+
+        <label for="composeContent">post</label>
+        <textarea name="composeContent" class="form-control" cols="30" rows="5"></textarea>
+
+      </div>
+      <button type="submit" class="btn btn-primary" name="button">Publish</button>
+    </form>
+  </div>
+
+  <!-- <footer class="footer">
+      <p>Made by Omkar Date</p>
+    </footer> -->
+
+</body>
+
+</html>

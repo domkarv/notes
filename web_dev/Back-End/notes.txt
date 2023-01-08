@@ -81,10 +81,10 @@ body-parser =>
 - for more see 'calculator/index.js'
 
 EJS =>
-- See 1st =>'to-do', 2nd =>'ejs-challenge' directories ['for more visit official website of EJS']
+- See 1st =>'to-do', 2nd =>'blog-project' directories ['for more visit official website of EJS']
 - All 'EJS' files should be in 'views' directory
 - This 'views' file should be at adjecent of 'app.js'
-- 'const ejs = require("ejs");', 'app.set("view engine", "ejs");' => To use 'EJS' this lines are mendatory
+- 'app.set("view engine", "ejs");' => To use 'EJS' this line is mendatory
 - Instead of 'res.send("...");' here we use 'res.render("EJS-file-name", "objects");'
 
 lodash =>

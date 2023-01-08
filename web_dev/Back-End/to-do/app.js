@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index", { today: date, items: itemList });
+  res.render("pages/index", { today: date, items: itemList });
   // 'index' is 'index.ejs' file
 });
 app.post("/", (req, res) => {
@@ -32,7 +32,7 @@ app.post("/", (req, res) => {
 });
 
 app.get("/work", (req, res) => {
-  res.render("work", { today: "Work List", items: workList });
+  res.render("pages/work", { today: "Work List", items: workList });
   // 'work' is 'work.ejs' file
 });
 app.post("/work", (req, res) => {
@@ -45,12 +45,12 @@ app.post("/work", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("pages/about");
   // 'about' is 'about.ejs' file
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact");
+  res.render("pages/contact");
   // 'contact' is 'contact.ejs' file
 });
 
