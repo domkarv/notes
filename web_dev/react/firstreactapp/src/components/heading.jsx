@@ -8,7 +8,7 @@ const time = date.getHours();
 
 let greet = "";
 let customeStyles = {
-  color: ""
+  color: "",
 };
 
 if (time < 12) {

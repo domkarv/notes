@@ -1,0 +1,53 @@
+Tailwind CSS =>
+- Create 'public/index.html' and 'src/main.css'
+- Write following 3 lines in 'main.css' file =>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+- 'npm init -y' (Initialize npm)
+  -> this will add 'package.json' file to your project
+
+- 'npx tailwindcss init' (to initialize tailwind)
+  -> this will add 'tailwind.config.js' file to your project
+
+- In 'tailwind.config.js', add "./public/*.html" to in 'content: []' (result => ' content: ["./public/*.html"] ')
+  -> This means we are adding tailwind in all html files saved in public folder
+
+- In 'package.json',
+  change this =>
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+
+  to this =>
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/main.css -o ./public/css/styles.css --watch"
+  },
+
+  -> Remember '--watch' is must
+  -> In place of 'tailwind' we can write anything but for convenience we have written 'tailwind'.
+  -> This will create new file in as 'public/css/styles.css'
+     and help to add require tailwind utility classes in 'styles.css'
+     3 lines written in 'main.css' will help to add require tailwind utility classes
+
+- 'npm run tailwind'
+  -> run this command to keep track of classes.
+     This will add require tailwind utility classes in 'styles.css'
+     Keep this command running to automatically add that classes
+
+- link 'styles.css' to your 'index.html'
+
+- Press 'Go live' to see your website
+
+
+*****
+1) Square bracket notation
+2) @apply and @layer directives
+3) Changing tailwindcss-config.js
+  - To use a name other than 'tailwind.config.js', pass it as an argument on the command-line:
+    'npx tailwindcss init <file_name>'
+4) 'npx tailwindcss init --full'
+  - Full 'tailwind.config.js' file
+  - https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
+*****

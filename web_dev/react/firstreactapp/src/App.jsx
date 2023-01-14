@@ -45,21 +45,33 @@ export default function App() {
         mob={contacts[2].mob}
         email={contacts[2].email}
       /> */}
+
       {/* instead of passing each value we can map the data as shown below */}
-      {contacts.map(createCard)}
+
+      {/* {contacts.map(createCard)} */}
+      {contacts.map((contact) => (
+        <Card
+          key={contact.id}
+          // when we are mapping data, each component should have a unique "key" (this is mendatory)
+          name={contact.name}
+          imageSource={contact.imageSource}
+          mob={contact.mob}
+          email={contact.email}
+        />
+      ))}
     </div>
   );
 }
 
-function createCard(contact) {
-  return (
-    <Card
-      key={contact.id}
-      // when we are mapping data, each component should have a unique "key" (this is mendatory)
-      name={contact.name}
-      imageSource={contact.imageSource}
-      mob={contact.mob}
-      email={contact.email}
-    />
-  );
-}
+// function createCard(contact) {
+//   return (
+//     <Card
+//       key={contact.id}
+//       // when we are mapping data, each component should have a unique "key" (this is mendatory)
+//       name={contact.name}
+//       imageSource={contact.imageSource}
+//       mob={contact.mob}
+//       email={contact.email}
+//     />
+//   );
+// }
