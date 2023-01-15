@@ -1,0 +1,9 @@
+- 'javac Main.java' => (this will compile your 'Main.java' and generate byte code(Main.class file))
+- 'java Main' => (this will execute your byte code(Main.class file)
+  => Here 'Main.class' and 'Main.java' files are at same location
+
+- 'javac -d /out Main.java' => (this will compile your 'Main.java' and generate byte code(Main.class file) in '/out' folder)
+- 'java -cp /out Main' => (this will execute your 'Main.class' located in '/out' folder
+  => Here 'Main.class' and 'Main.java' files are at different location
+
+- 'Arrays.sort(arr)' => To sort array => required package => 'import java.util.Arrays'
