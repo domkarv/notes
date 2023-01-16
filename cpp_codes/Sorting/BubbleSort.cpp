@@ -3,15 +3,15 @@ using namespace std;
 
 int main()
 {
-   vector<int> arr = {8, 22, 7, 9, 31, 5, 13};
+   vector<int> arr = {9, 8, 7, 6, 5, 4, 3, 2, 1};
    int n = arr.size();
    bool swapped = false;
 
    // bubble sort
    int i;
-   for (i = 0; i < n - 2; i++)
+   for (i = 1; i < n; i++)
    {
-      for (int j = 0; j < n - i - 1; j++)
+      for (int j = 0; j < n - i; j++)
       {
          if (arr[j] > arr[j + 1])
          {
@@ -23,8 +23,8 @@ int main()
       // optimizing code =>
       // With this optimization, time complexity of this code will
       // decrease from 'O(n^2)' to 'O(n)'.
-      // This optimization will help when array is already sorted or
-      // will sort in 2-3 steps.
+      // This optimization will help when array is already sorted
+      // or will sort in 2-3 steps.
 
       // If array is already sorted then "swapped = false;" will remain as it is,
       // and help to break out of outer loop and whole loop will run for only one time
@@ -35,9 +35,7 @@ int main()
 
       // https://youtu.be/zOhUavxlzw4?t=1719
       if (swapped == false)
-      {
          break;
-      }
 
       // if swapped hitted the true value then again set it to false.
       swapped = false;
@@ -47,9 +45,7 @@ int main()
    cout << "Steps: " << i << endl;
 
    for (i = 0; i < n; i++)
-   {
       cout << arr[i] << " ";
-   }
 
    return 0;
 }
