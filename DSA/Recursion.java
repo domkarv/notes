@@ -1,4 +1,4 @@
-public class Practice {
+public class Recursion {
   public static void main(String[] args) {
     addNum(1, 10);
   }
