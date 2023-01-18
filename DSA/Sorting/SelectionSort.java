@@ -1,8 +1,10 @@
 public class SelectionSort {
   public static void main(String[] args) {
     int[] arr = { 4, 6, 5, 3, 1, 2 };
-
-    // first selects the smallest number and swap it with it's correct position
+    /*
+     * first selects the smallest number
+     * then swap it with it's correct position
+     */
 
     // What is stable and unstable algorithm ? =>
     // https://www.baeldung.com/cs/stable-sorting-algorithms#:~:text=Stable%20sorting%20algorithms%20preserve%20the,elements%20relative%20to%20one%20another.
@@ -13,9 +15,13 @@ public class SelectionSort {
         if (arr[indexOfSmallNum] > arr[j])
           indexOfSmallNum = j;
       }
-      int temp = arr[i];
-      arr[i] = arr[indexOfSmallNum];
-      arr[indexOfSmallNum] = temp;
+
+      // 'indexOfSmallNum = i' then no need to swap them
+      if (indexOfSmallNum != i) {
+        int temp = arr[i];
+        arr[i] = arr[indexOfSmallNum];
+        arr[indexOfSmallNum] = temp;
+      }
     }
 
     for (int i : arr) {
