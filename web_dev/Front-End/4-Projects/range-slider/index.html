@@ -13,14 +13,25 @@
 <body>
 
   <div class="range-container">
-    <input type="range" id="range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
-    <span id="range-value">00</span>
+    <input type="range" id="range1" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
+    <span id="rangeValue1">00</span>
+  </div>
+
+  <div class="range-container">
+    <input type="range" id="range2" value="0" min="0" max="100">
+    <span id="rangeValue2">00</span>
   </div>
 
   <script>
-    function rangeSlider(val) {
-      val = val < 10 ? '0' + val : val;
-      document.getElementById('range-value').textContent = val;
+    function rangeSlider(value) {
+      value = value < 10 ? '0' + value : value;
+      document.getElementById('rangeValue1').textContent = value;
+    }
+
+    document.getElementById('range2').oninput = function () {
+      let value = this.value;
+      value = value < 10 ? '0' + value : value;
+      document.getElementById('rangeValue2').innerText = value;
     }
   </script>
 

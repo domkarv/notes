@@ -8,6 +8,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 7rem;
   height: 100vh;
   background-color: #edf1f4;
   user-select: none;
@@ -20,7 +22,8 @@ body {
   box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fff;
 }
 
-#range {
+#range1,
+#range2 {
   cursor: pointer;
   width: 300px;
   height: 15px;
@@ -32,7 +35,8 @@ body {
   overflow: hidden;
 }
 
-#range::-webkit-slider-thumb {
+#range1::-webkit-slider-thumb,
+#range2::-webkit-slider-thumb {
   appearance: none;
   height: 15px;
   width: 15px;
@@ -42,7 +46,8 @@ body {
   box-shadow: -158px 0px 0px 150px #27a0ff;
 }
 
-#range-value {
+#rangeValue1,
+#rangeValue2 {
   display: inline-block;
   position: relative;
   text-align: center;
