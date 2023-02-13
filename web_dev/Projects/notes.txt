@@ -1,0 +1,36 @@
+# React app with vite and tailwindcss
+
+- To create new react app with vite in current directory
+  `npm create vite@latest . -- --template react`
+  -> Here '.' indicates current directory
+  OR
+  You can give any name to your project by following command
+  `npm create vite@latest my-project -- --template react`
+  -> Here 'my-project' is your project name
+
+- To install tailwindcss
+  `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+  -> Here '-D' indicates that it will be installed as dev dependency
+
+- Now run the 'init' command to generate both `tailwind.config.cjs` and `postcss.config.cjs`
+  `npx tailwindcss init -p`
+
+- Now open `tailwind.config.cjs` and paste the following lines
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
+
+- Add the `@tailwind` directives for each of Tailwind’s layers to your `./src/index.css` file.
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+- Run your build process with `npm run dev`
