@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=bUVYHF6fRbo&list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPy
 const http = require("http");
 const fs = require("fs");
 
-const home = fs.readFileSync("lib/home.html");
+const home = fs.readFileSync("./lib/home.html");
 const about = fs.readFileSync("lib/about.html");
 const contact = fs.readFileSync("lib/contact.html");
 

@@ -7,12 +7,13 @@ export default function Home() {
         <img
           src="/src/assets/shared/solar-system.png"
           alt="Logo"
+          draggable="false" // disable drag and drop of images
           className="h-16"
         />
         <DesktopNav />
       </nav>
       <main className="text-center pt-4">
-        <p className="leading-10 opacity-70 font-barlow whitespace-nowrap tracking-[4.75px] uppercase">
+        <p className="leading-10 opacity-70 font-barlow whitespace-nowrap tracking-[4.75px] text-2xl uppercase typewriter">
           So, you want to travel to
         </p>
         <h1 className="text-8xl font-bellefair pt-5 uppercase">Space</h1>

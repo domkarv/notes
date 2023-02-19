@@ -15,9 +15,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/lib"));
+/* 
+By commenting above line we cannot access to css files also
+there is no need to use '__dirname' in sendFile method
+*/
 
 app.get("/", (request, responce) => {
-  responce.responce.sendFile(__dirname + "/lib/index.html");
+  responce.sendFile("./lib/index.html");
 });
 
 app.post("/", function (request, responce) {
@@ -54,7 +58,9 @@ app.post("/", function (request, responce) {
       Try any of the following three methods
       This help '.write' method to detect html elements
       .send method does not require this (see 'express-server/server.js')
+      but we can't use more than one 'send' method in one method of app
       */
+
       responce.type("text/html");
       // responce.header("Content-Type", "text/html");
       // responce.writeHead(200, { "Content-Type": "text/html" });
@@ -67,7 +73,7 @@ app.post("/", function (request, responce) {
       );
       responce.write("<img src=" + imageURL + ">");
       responce.send();
-      // we can't write more than one 'send' method in one app method
+      // we can't write more than one 'send' method in one method of app
       // so we are using write method that can be more than one
     });
   });

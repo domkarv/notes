@@ -15,8 +15,11 @@ Follw this commands =>
 - When the port is '3000'
   u can use => 'http://127.0.0.1:3000' OR 'http://localhost:3000'
 
-- When the port is '80'
+- '80' is default port for http servers
   u can use => 'http://127.0.0.1' OR 'http://localhost' OR 'http://127.0.0.1:80' OR 'http://localhost:80'
+
+- '443' is default port for https servers
+  u can use => 'https://127.0.0.1' OR 'https://localhost' OR 'https://127.0.0.1:443' OR 'https://localhost:443'
 ***
 
 Node =>
@@ -28,10 +31,10 @@ Node =>
   To exit from REPL just type '.exit' and press enter or use 'ctrl + c'
 - To run JavaScript file in terminal => type 'node fileName.js'
 
-npm =>
+npm => (Start is here)
 - To initializing npm in your project type 'npm init' and press enter.
 - Now it will ask some questions, if you are satisfied with npm suggetion then
-  enter otherwise type whatever you want
+  hit enter, otherwise type whatever you want
 - Once npm is initialized in your project,
   you can use npm pre-build packages by installing them in your project.
 - Search for npm package you want to install on npm's official website,
@@ -45,6 +48,8 @@ npm =>
   'npm install packageName@1.3.5' =>(1.3.5 is version you want to install.)
 - If some you want to install some packages only for development not for production
   then use 'npm install package --save-dev' => (you can see this listed in 'package.json' in 'devDependencies'.)
+- To see the list of packages installed => 'npm list'
+- If you want to uninstall any package => 'npm uninstall packageName'
 - To see the versions of packages installed => 'npm view packageName version'
 
 **
@@ -69,10 +74,10 @@ express =>
 - this is where 'nodemon' help us to automate the things
 
 nodemon =>
-- 'nodemon', a npm package that will make it way easier for us to auto start our servers, it's like Go live
+- 'nodemon', a npm package that will make it way easier for us to auto start our servers, it's like 'Live Server'
 - 'npm install -g nodemon' => to install 'nodemon'
 - 'nodemon fileName.js' to start server
-  Once you start the server no need to do quit, save and start again, all changes are saved automatically
+  Once you start the server no need to quit, save and start again, all changes are saved automatically
 
 body-parser =>
 - Body-parser is the Node.js body parsing middleware.
@@ -82,7 +87,7 @@ body-parser =>
 
 EJS =>
 - See 1st =>'to-do', 2nd =>'blog-project' directories ['for more visit official website of EJS']
-- All 'EJS' files should be in 'views' directory
+- All '.ejs' files should be in 'views' directory
 - This 'views' file should be at adjecent of 'app.js'
 - 'app.set("view engine", "ejs");' => To use 'EJS' this line is mendatory
 - Instead of 'res.send("...");' here we use 'res.render("EJS-file-name", "objects");'

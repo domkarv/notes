@@ -9,15 +9,16 @@ app.use(boodyParser.urlencoded({ extended: true }));
 app.get("/", function (request, responce) {
   // responce.sendFile("index.html");
   /* this is ralative file path that means this is relative to calculator folder
-  we don't where this folder gonna to be save. So instead of using relative path
+  we don't know where this folder gonna be save. So instead of using relative path
   we have to use absolute path */
 
   // console.log(__dirname); // this will print on git bash once request is made by browser
   // this return current location of your file
-  // e.g., for this index.js current location is 'D:/Programmin/web_dev/Back-End/calculator'
+  // e.g., for this 'index.js' current location is 'D:/Programmin/web_dev/Back-End/calculator/index.js'
   // and this is absolute file path i.e., from root location
 
-  responce.sendFile(__dirname + "/index.html");
+  // responce.sendFile(__dirname + "/index.html");
+  responce.sendFile("./index.html", { root: __dirname });
   // to sent message we use 'send' method and to send file we use 'sendFile' method
 });
 // To handle any post request made by site we have to use '.post()' method

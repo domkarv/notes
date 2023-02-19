@@ -6,8 +6,9 @@ const app = express(); // initializing express in project
 // And below line means when home-page gets load what responce should get on that page
 app.get("/", function (request, responce) {
   // console.log(request);
+  console.log(responce);
   /* this will show you the information associated with 'request' made by server
-  to see this information (1) start your server => (2) load your site => (3) see git bash information is listed on bash */
+  to see this information (1) start your server => (2) load your site => (3) see git bash, information is listed on bash */
   /*in 2nd step => you loaded your site that means you made an request to your server to send the information */
 
   responce.send("Omkar Date");
