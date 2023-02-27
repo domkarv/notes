@@ -8,6 +8,9 @@
   `npm create vite@latest my-project -- --template react`
   -> Here 'my-project' is your project name
 
+- Now run:
+  `npm install`
+
 - To install tailwindcss
   `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
   -> Here '-D' indicates that it will be installed as dev dependency
