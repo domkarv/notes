@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/lib"));
 /* 
-By commenting above line we cannot access to css files also
-there is no need to use '__dirname' in sendFile method
+By commenting above line we cannot access to css files
+also there is no need to use '__dirname' in sendFile method
 */
 
 app.get("/", (request, responce) => {
