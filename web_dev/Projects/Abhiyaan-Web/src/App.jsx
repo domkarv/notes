@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div>
       <Gallery />
-      <p>
+      {/* <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nesciunt
         aut, ut iure, eaque debitis ipsa consectetur eius, officiis sit non?
         Non, ipsam iste explicabo ex minima voluptatum minus aspernatur.
@@ -33,7 +33,7 @@ export default function App() {
         sed expedita sit quos consequuntur placeat qui, similique beatae
         provident repellendus enim eum! Doloremque eius corrupti, quidem
         deleniti nesciunt deserunt.
-      </p>
+      </p> */}
     </div>
   );
 }

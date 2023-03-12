@@ -6,6 +6,7 @@ import "./Gallery.css";
 export default function Gallery() {
   window.onscroll = function () {
     imageScrollEffect();
+    console.log("Omkar Date");
   };
   const imageScrollEffect = () => {
     if (document.documentElement.scrollTop) {
