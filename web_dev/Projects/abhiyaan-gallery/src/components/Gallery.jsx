@@ -1,61 +1,42 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap/all";
-import $ from "jquery";
+import React from "react";
 
 import "./Gallery.css";
+import "../components/Animations.css";
+import Years from "../models/Years";
+import Data from "../models/EventData";
+const YearsPage = React.lazy(() => import("./YearsPage"));
 
 export default function Gallery() {
-  const ring = useRef(null);
-  const img = useRef(null);
-
-  const gallery = document.querySelector(".gallery");
-  const images = document.querySelectorAll(".image-container");
-
-  let scrollPosition = 0;
-
-  window.addEventListener("wheel", () => {
-    // Get the current scroll position
-    const currentPosition = window.scrollY;
-
-    // Calculate the scroll distance since last update
-    const scrollDistance = currentPosition - scrollPosition;
-
-    // Update the scroll position
-    scrollPosition = currentPosition;
-
-    // Calculate the rotation angle based on the scroll distance
-    const rotationAngle = scrollDistance;
-
-    // Loop through the image containers and update the active class
-    images.forEach((image, index) => {
-      const angle = (index * 72 + rotationAngle) % 360;
-      image.style.transform = `rotateY(${angle}deg) translateZ(200px)`;
-      image.classList.remove("active");
-      if (angle >= -36 && angle < 36) {
-        image.classList.add("active");
-      }
-    });
-  });
-
+  function imageEventHandler(e) {
+    // const element = e.target;
+    // const style = getComputedStyle(element);
+    // console.log(style);
+    document.querySelector(".image-container").style.display = "block";
+    document.querySelector(".image-container").style.animation = "fadeIn 3s";
+    document.querySelector(".media-container").style.display = "none";
+  }
   return (
     <>
-      <div class="gallery">
-        <div class="image-container">
-          <img src="https://picsum.photos/id/1000/400/400" alt="Image" />
-        </div>
-        <div class="image-container">
-          <img src="https://picsum.photos/id/1002/400/400" alt="Image" />
-        </div>
-        <div class="image-container">
-          <img src="https://picsum.photos/id/1003/400/400" alt="Image" />
-        </div>
-        <div class="image-container">
-          <img src="https://picsum.photos/id/1004/400/400" alt="Image" />
-        </div>
-        <div class="image-container">
-          <img src="https://picsum.photos/id/1005/400/400" alt="Image" />
+      <div className="media-container">
+        <div className="media-scroller">
+          {Years.map((year, i) => {
+            return (
+              <div
+                className="media-element"
+                onClick={(e) => imageEventHandler(e)}
+                style={{ backgroundImage: `url(${year[i]})` }}
+                key={i}
+                about={i}
+              >
+                <h1 className="year-heading">{Data[i].year}</h1>
+                <p className="year-info">{Data[i].info}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      <YearsPage />
     </>
   );
 }

@@ -20,9 +20,9 @@ public class PreSJF {
 
     for (int i = 0; i < n; i++) {
       System.out.print("Enter process " + (i + 1) + " arrival time and execution time: ");
+      pId[i] = i + 1;
       arrTime[i] = sc.nextInt();
       execuTime[i] = sc.nextInt();
-      pId[i] = i + 1;
       tempExecuTime[i] = execuTime[i];
       flag[i] = 0;
     }
