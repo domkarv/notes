@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-const boodyParser = require("body-parser");
-app.use(boodyParser.urlencoded({ extended: true }));
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Addition calculator */
 app.get("/", function (request, responce) {

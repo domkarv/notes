@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Avatar from "./Avatar";
 
-export default function Nav() {
+export default function Nav({ user }) {
+  // console.log(user);
   return (
     <nav className="bg-gray-800 mx-auto px-2 flex items-center justify-between h-16">
       <div className="flex items-center gap-5">
@@ -30,12 +32,17 @@ export default function Nav() {
           Document
         </Link>
       </div>
-      <Link
-        to={"/login"}
-        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-      >
-        Login
-      </Link>
+
+      {user === null ? (
+        <Link
+          to={"/login"}
+          className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+        >
+          Login
+        </Link>
+      ) : (
+        <Avatar user={user} />
+      )}
     </nav>
   );
 }

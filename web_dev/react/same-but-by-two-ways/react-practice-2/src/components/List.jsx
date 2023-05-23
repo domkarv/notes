@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function List(props) {
+export default function List() {
   const items = [
     {
       id: "1",

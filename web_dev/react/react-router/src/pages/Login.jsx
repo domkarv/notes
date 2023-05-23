@@ -13,12 +13,12 @@ export default function Login({ setUser }) {
 
     if (!name || !email) return;
     setUser({ name: name, email: email });
-    navigate("/user"); // this will redirect to '/user' route
+    navigate("/");
   };
 
   return (
     <section className="section">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={(e) => handleSubmit(e)}>
         <h5>login</h5>
         <div className="form-row">
           <label htmlFor="name" className="form-label">
