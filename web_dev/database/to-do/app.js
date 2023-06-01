@@ -4,8 +4,9 @@ const lodash = require("lodash");
 const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb://127.0.0.1:27017/todolistDB";
-mongoose.connect(mongoDB, (err) => {
+
+const mongoDBUrl = "mongodb://127.0.0.1:27017/todolistDB";
+mongoose.connect(mongoDBUrl, (err) => {
   if (err) console.log(`Unable to connect to MongoDB: ${err}`);
   else console.log("MongoDB is now connected!");
 });
@@ -83,7 +84,7 @@ app.post("/", (req, res) => {
 
   if (item === "") {
     if (requestedTitle === "Today") res.redirect("/");
-    else res.redirect(`/${requestedTitle}`);
+    else res.redirect(`custom/${requestedTitle}`);
   } else {
     const newItem = new Task({
       task: item,
@@ -99,18 +100,20 @@ app.post("/", (req, res) => {
           foundList.items.push(newItem);
           /* 'foundList.items' is array of objects */
           foundList.save(); // this will save item to 'custometaskcollection'
-          res.redirect(`/${requestedTitle}`);
+          res.redirect(`custom/${requestedTitle}`);
         }
       });
     }
   }
 });
 
-/* responce to custome lists */
-app.get("/:customeListName", (req, res) => {
-  const customeListName = lodash.startCase(req.params.customeListName);
+/* responce to custom lists */
+app.get("/custom/:customListName", (req, res) => {
+  const customListName = lodash.startCase(req.params.customListName);
 
-  CustomeTask.findOne({ name: customeListName }, (err, foundList) => {
+  // console.log(customListName);
+
+  CustomeTask.findOne({ name: customListName }, (err, foundList) => {
     if (err) console.log(`Reading error is: ${err}`);
     else {
       if (foundList) {
@@ -123,12 +126,12 @@ app.get("/:customeListName", (req, res) => {
       } else {
         // if list not found then this will create new list and save it
         const newItem = new CustomeTask({
-          name: customeListName,
+          name: customListName,
           items: defaultItems,
         });
         newItem.save();
-        console.log(`${customeListName} list is created!`);
-        res.redirect(`/${customeListName}`);
+        console.log(`${customListName} list is created!`);
+        res.redirect(`custome/${customListName}`);
       }
     }
   });

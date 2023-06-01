@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.send(
-    "<h1>Fruits</h1><p>There are many kinds of fruits.</p><ul><li><a href='/fruits/apple'>Apple</a></li><li><a href='/fruits/banana'>Banana</a></li></ul>"
+    "<h1>Fruits</h1><p>There are many kinds of fruits.</p><ul><li><a href='/api/fruits/apple'>Apple</a></li><li><a href='/api/fruits/banana'>Banana</a></li></ul>"
   );
 });
 

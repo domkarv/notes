@@ -40,7 +40,7 @@ npm => (Start is here)
 - Search for npm package you want to install on npm's official website,
   and there you will get steps to install particular npm package,
   and the methods to access this packages are also given there (for more see 'newFolder/index.js')
-  ( in 'newFolder' you have used 'superheroes' and 'supervillains' npm packages )
+  ( in 'newFolder' we have used 'superheroes' and 'supervillains' npm packages )
 - Once this packages are installed you can see them listed in 'package.json' in 'dependencies'.
 - By mistaken, if your package manager file 'node modules' got deleted
   then run a command 'npm install' at your project location.
@@ -55,7 +55,7 @@ npm => (Start is here)
 **
 In 'package.json' in 'dependencies' you will see '^' in front of versions of packages,
 this '^' sign means that when our project goes on production this will install mentioned version of package only.
-But if youwant to install latest version of package you can use '~' OR '>' sign
+But if you want to install latest version of package you can use '~' OR '>' sign
 **
 
 express =>
@@ -86,7 +86,7 @@ body-parser =>
 - for more see 'calculator/index.js'
 
 EJS =>
-- See 1st =>'to-do', 2nd =>'blog-project' directories ['for more visit official website of EJS']
+- See 'blog-project' directories ['for more visit official website of EJS']
 - All '.ejs' files should be in 'views' directory
 - This 'views' file should be at adjecent of 'app.js'
 - 'app.set("view engine", "ejs");' => To use 'EJS' this line is mendatory
