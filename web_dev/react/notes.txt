@@ -36,9 +36,9 @@
   @tailwind components;
   @tailwind utilities;
 
-- Run your build process with `npm run dev`
-
 - `npm install -D prettier-plugin-tailwindcss`
   'prettier-plugin-tailwindcss'
   This plugin scans your templates for class attributes containing Tailwind CSS classes
   and then sorts those classes automatically
+
+- Run your development build with `npm run dev`

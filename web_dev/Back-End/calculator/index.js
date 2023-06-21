@@ -11,7 +11,7 @@ app.get("/", function (request, responce) {
   we don't know where this folder gonna be save. So instead of using relative path
   we have to use absolute path */
 
-  // console.log(__dirname); // this will print on git bash once request is made by browser
+  // console.log(__dirname); // this will print on terminal, once request is made by browser
   // this return current location of your file
   // e.g., for this 'index.js' current location is 'D:/Programmin/web_dev/Back-End/calculator/index.js'
   // and this is absolute file path i.e., from root location
@@ -20,6 +20,7 @@ app.get("/", function (request, responce) {
   responce.sendFile("./index.html", { root: __dirname });
   // to sent message we use 'send' method and to send file we use 'sendFile' method
 });
+
 // To handle any post request made by site we have to use '.post()' method
 // this is where our server process the post requests (in html file you have mention <form method="post">)
 // now to access the data post by site we have to use 'body-parser' npm package (line 5 and 6)
