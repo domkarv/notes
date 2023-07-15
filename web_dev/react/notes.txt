@@ -36,7 +36,7 @@
   @tailwind components;
   @tailwind utilities;
 
-- `npm install -D prettier-plugin-tailwindcss`
+- `npm i -D prettier-plugin-tailwindcss`
   'prettier-plugin-tailwindcss'
   This plugin scans your templates for class attributes containing Tailwind CSS classes
   and then sorts those classes automatically
