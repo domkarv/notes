@@ -1,11 +1,11 @@
 # React app with vite and tailwindcss
 
 - To create new react app with vite in current directory
-  `npm create vite@latest . -- --template react`
+  `npm create vite@latest .`
   -> Here '.' indicates current directory
   OR
   You can give any name to your project by following command
-  `npm create vite@latest my-project -- --template react`
+  `npm create vite@latest my-project`
   -> Here 'my-project' is your project name
 
 - Now run:
@@ -18,18 +18,10 @@
 - Now run the 'init' command to generate both `tailwind.config.cjs` and `postcss.config.cjs`
   `npx tailwindcss init -p`
 
-- Now open `tailwind.config.cjs` and paste the following lines
-  /** @type {import('tailwindcss').Config} */
-  module.exports = {
+- Now open `tailwind.config.js` and add the following code
     content: [
-      "./index.html",
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  }
 
 - Add the `@tailwind` directives for each of Tailwind’s layers to your `./src/index.css` file.
   @tailwind base;
