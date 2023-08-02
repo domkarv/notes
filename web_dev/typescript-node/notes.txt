@@ -5,19 +5,6 @@
 
 3) `npx tsc --init`
   /* this will create tsconfig.json file */
-  /* now add the following lines in tsconfig.json file */
-  {
-    "compilerOptions": {
-      "target": "es2016",
-      "module": "commonjs",
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "skipLibCheck": true,
-      "moduleResolution": "Node"
-    }
-  }
-  if above json snippet is present as it is then it's ok, else is there anything different, then cross check it
 
 ***
 first three lines are important and they are need to get executed in order
