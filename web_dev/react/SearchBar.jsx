@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo } from 'react';
 
 export default function SearchBar() {
   const searchRef = useRef(null);
   const [pokemonData, setPokemonData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [showDialog, setShowDialog] = useState(false);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function SearchBar() {
     const fetchPokemonData = async () => {
       try {
         const response = await fetch(
-          "https://pokeapi.co/api/v2/pokemon?limit=151",
+          'https://pokeapi.co/api/v2/pokemon?limit=151',
           {
             signal: controller.signal,
           }
@@ -20,7 +20,7 @@ export default function SearchBar() {
         const jsonData = await response.json();
         setPokemonData(jsonData.results);
       } catch (error) {
-        if (error.name === "AbortError") console.log("Fetch aborted");
+        if (error.name === 'AbortError') console.log('Fetch aborted');
         else throw error;
       }
     };
@@ -56,8 +56,8 @@ export default function SearchBar() {
 
   const handleDialogBox = () => {
     setShowDialog(false);
-    searchRef.current.value = "";
-    setSearchQuery("");
+    searchRef.current.value = '';
+    setSearchQuery('');
     searchRef.current.focus();
   };
 
@@ -111,7 +111,7 @@ export default function SearchBar() {
 }
 
 function Card({ name, url }) {
-  const id = url.split("/")[6];
+  const id = url.split('/')[6];
   const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (

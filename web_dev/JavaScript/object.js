@@ -1,7 +1,7 @@
 // For any difficulty refer hand-written notes
 
 var studentOneInfo = {
-  studentName: "Omkar",
+  studentName: 'Omkar',
   age: 19,
   rollNo: 11,
   studentMarks: function () {
@@ -11,16 +11,16 @@ var studentOneInfo = {
 
 console.log(
   studentOneInfo.studentName +
-    " " +
+    ' ' +
     studentOneInfo.age +
-    " " +
+    ' ' +
     studentOneInfo.rollNo +
-    " " +
+    ' ' +
     studentOneInfo.studentMarks()
 );
 
 var studentTwoInfo = {
-  studentName: "Aarav",
+  studentName: 'Aarav',
   age: 19,
   rollNo: 12,
   studentMarks: function () {
@@ -55,25 +55,25 @@ class StudentInfo {
 // and it accessed same as the constructor function
 */
 // Initializing objectz
-var studentThreeInfo = new StudentInfo("Om", 19, 13, 87);
-var studentFourInfo = new StudentInfo("Dikshant", 19, 14, 82);
+var studentThreeInfo = new StudentInfo('Om', 19, 13, 87);
+var studentFourInfo = new StudentInfo('Dikshant', 19, 14, 82);
 
 console.log(
   studentThreeInfo.studentName +
-    " " +
+    ' ' +
     studentThreeInfo.age +
-    " " +
+    ' ' +
     studentThreeInfo.rollNo +
-    " " +
+    ' ' +
     studentThreeInfo.studentMarks()
 );
 
 console.log(
   studentFourInfo.studentName +
-    " " +
+    ' ' +
     studentFourInfo.age +
-    " " +
+    ' ' +
     studentFourInfo.rollNo +
-    " " +
+    ' ' +
     studentFourInfo.studentMarks()
 );
