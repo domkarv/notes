@@ -1,23 +1,23 @@
 # React app with vite and tailwindcss
 
 - To create new react app with vite in current directory
-  `npm create vite@latest .`
+  `npm create vite@latest .` OR `yarn create vite .`    // Here vite will ask to select React and TS
   -> Here '.' indicates current directory
   OR
   You can give any name to your project by following command
-  `npm create vite@latest my-project`
+  `npm create vite@latest my-project` OR `yarn create vite my-project`
   -> Here 'my-project' is your project name
 
 - Now run:
-  `npm install`
+  `npm install` OR `yarn`
 
 - To install tailwindcss
-  `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+  `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest` OR `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
   -> Here '-D' indicates that it will be installed as dev dependency
 
 - Now run the 'init' command to generate both `tailwind.config.cjs` and `postcss.config.cjs`
-  `npx tailwindcss init -p`
-
+  `npx tailwindcss init -p` OR `yarn tailwindcss init -p`
+ 
 - Now open `tailwind.config.js` and add the following code
     content: [
       "./src/**/*.{js,ts,jsx,tsx}",
@@ -28,9 +28,15 @@
   @tailwind components;
   @tailwind utilities;
 
-- `npm i -D prettier-plugin-tailwindcss`
+- /* Optional */
+  `npm i -D prettier --lts` OR `yarn add -D prettier --lts`
+  `npm i -D prettier-plugin-tailwindcss` OR `yarn add -D prettier-plugin-tailwindcss`
   'prettier-plugin-tailwindcss'
   This plugin scans your templates for class attributes containing Tailwind CSS classes
   and then sorts those classes automatically
 
-- Run your development build with `npm run dev`
+- /* Optional */
+  `npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser`
+  `npm i -D prettier eslint-config-prettier eslint-plugin-prettier`
+
+- Run your development build with `npm run dev` OR `yarn dev`
