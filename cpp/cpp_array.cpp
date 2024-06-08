@@ -46,7 +46,7 @@ int main()
    // it passes it's address to that function
 
    // But when we are passing variable to function
-   // it is creating copy of that function.
+   // it is creating copy of that variable.
 
    // Reversing array
    for (int i = 0; i < sizeOfArray / 2; i++)
